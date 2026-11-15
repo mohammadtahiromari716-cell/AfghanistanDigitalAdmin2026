@@ -1,22 +1,23 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+package com.afghanistandigital.admin
 
-    <application
-        android:allowBackup="true"
-        android:label="Afghanistan Digital Admin"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar"
-        android:usesCleartextTraffic="false">
+import android.app.Activity
+import android.os.Bundle
+import android.widget.TextView
+import android.graphics.Color
+import android.view.Gravity
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+class MainActivity : Activity() {
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        </activity>
+        val screen = TextView(this)
+        screen.text = "🇦🇫\nافغانستان دیجیتال\nبرنامه با موفقیت اجرا شد"
+        screen.textSize = 25f
+        screen.gravity = Gravity.CENTER
+        screen.setTextColor(Color.WHITE)
+        screen.setBackgroundColor(Color.rgb(16, 24, 32))
 
-    </application>
-
-</manifest>
+        setContentView(screen)
+    }
+}
